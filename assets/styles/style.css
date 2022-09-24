@@ -16,4 +16,150 @@ body {
 body {
   background: #000;
 }
+
+header {
+  text-align: right;
+  padding: 1rem 3rem;
+}
+
+header #gameLink {
+  position: relative;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 700;
+  -webkit-tap-highlight-color: transparent;
+}
+
+header #gameLink::after {
+  content: '>';
+  position: absolute;
+  margin-left: .5rem;
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+}
+
+header #gameLink:hover {
+  text-decoration: underline;
+}
+
+header #gameLink:hover::after {
+  color: #656565;
+  -webkit-transform: translateX(0.8rem);
+          transform: translateX(0.8rem);
+}
+
+main .upper-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+main .upper-section::before {
+  content: ' ';
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 50px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#000), to(transparent));
+  background: linear-gradient(to bottom, #000, transparent);
+}
+
+main .upper-section::after {
+  content: ' ';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  background: -webkit-gradient(linear, left bottom, left top, from(#000), to(transparent));
+  background: linear-gradient(to top, #000, transparent);
+}
+
+main .upper-section #background {
+  width: 100%;
+  height: 100%;
+}
+
+main .upper-section #skull {
+  position: absolute;
+  width: 70%;
+  max-width: 400px;
+  top: 40%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+main .content-section {
+  position: relative;
+  height: 2000px;
+  width: 100%;
+}
+
+main .content-section::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 4rem;
+  height: 100%;
+  width: .75rem;
+  background: #ffffff;
+  border-radius: 1rem;
+}
+
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 6rem;
+  text-align: center;
+  color: white;
+  padding: 1rem;
+  font-size: 1.15rem;
+  font-weight: 300;
+  gap: 2rem;
+}
+
+footer a {
+  font-weight: 700;
+  color: #656565;
+  text-decoration: none;
+}
+
+footer ul {
+  list-style: none;
+}
+
+footer ul li:first-of-type {
+  font-weight: 700;
+}
+
+@media screen and (min-width: 800px) {
+  body main .upper-section #skull {
+    width: 50%;
+    max-width: 500px;
+  }
+  body main .content-section::before {
+    top: 8rem;
+  }
+  body footer {
+    margin-top: 12rem;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
 /*# sourceMappingURL=style.css.map */
