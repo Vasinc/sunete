@@ -94,7 +94,8 @@ main .upper-section #skull {
 
 main .content-section {
   position: relative;
-  height: 2000px;
+  top: 2rem;
+  padding: 2rem 0;
   width: 100%;
 }
 
@@ -102,11 +103,60 @@ main .content-section::before {
   content: '';
   position: absolute;
   left: 50%;
-  top: 4rem;
   height: 100%;
-  width: .75rem;
+  width: .5rem;
   background: #ffffff;
   border-radius: 1rem;
+}
+
+main .content-section .cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 2rem;
+  margin: auto;
+  margin-top: 2rem;
+  padding: 0 1rem;
+  max-width: 853px;
+  color: #000;
+}
+
+main .content-section .cards .card {
+  position: relative;
+  width: 40%;
+  max-width: 350px;
+  background: #ffffff;
+  padding: .5rem;
+  border-radius: .5rem;
+}
+
+main .content-section .cards .card-left {
+  margin-right: 100%;
+  -webkit-transform: translateX(50%);
+          transform: translateX(50%);
+}
+
+main .content-section .cards .card-left .circle {
+  position: absolute;
+  top: 50%;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: black;
+  border: 3px solid #ffffff;
+  border-radius: 50%;
+}
+
+main .content-section .cards .card-right {
+  margin-left: 100%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 
 footer {
@@ -145,8 +195,8 @@ footer ul li:first-of-type {
     width: 50%;
     max-width: 500px;
   }
-  body main .content-section::before {
-    top: 8rem;
+  body main .content-section {
+    top: 4rem;
   }
   body footer {
     margin-top: 12rem;

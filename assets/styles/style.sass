@@ -79,17 +79,51 @@ main
             transform: translate(-50%, -50%)
     .content-section
         position: relative
-        height: 2000px
+        top: 2rem
+        // height: 2000px
+        padding: 2rem 0
         width: 100%
         &::before
             content: ''
             position: absolute
             left: 50%
-            top: 4rem
             height: 100%
-            width: .75rem
+            width: .5rem
             background: $white
             border-radius: 1rem
+        .cards
+            display: flex
+            flex-direction: column
+            align-items: center
+            gap: 2rem
+            margin: auto
+            margin-top: 2rem 
+            padding: 0 1rem
+            max-width: 853px
+            color: $black
+            .card
+                position: relative
+                width: 40%
+                max-width: 350px
+                background: $white
+                padding: .5rem
+                border-radius: .5rem
+            .card-left
+                margin-right: 100%
+                transform: translateX(50%)
+                .circle
+                    position: absolute
+                    top: 50%
+                    // right: -36px
+                    width: 1.5rem
+                    height: 1.5rem
+                    background: black
+                    border: 3px solid $white
+                    border-radius: 50%
+            .card-right
+                margin-left: 100%
+                transform: translateX(-50%)
+
 
 footer
     display: flex
@@ -118,8 +152,9 @@ footer
                     width: 50%
                     max-width: 500px
             .content-section
-                &::before
-                    top: 8rem
+                top: 4rem
+                // &::before
+                //     top: 8rem
         footer
             margin-top: 12rem
             flex-direction: row
