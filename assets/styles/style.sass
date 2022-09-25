@@ -17,6 +17,10 @@ body
     font-family: 'Ubuntu', sans-serif
     box-sizing: border-box
 
+//classes
+.show
+    opacity: 1 !important
+
 // actual styling
 body
     background: $black
@@ -108,6 +112,8 @@ main
                 background: $white
                 padding: .5rem
                 border-radius: .5rem
+                opacity: 0
+                transition: opacity 350ms linear
             .card-left
                 margin-right: 100%
                 transform: translateX(50%)

@@ -13,6 +13,10 @@ body {
           box-sizing: border-box;
 }
 
+.show {
+  opacity: 1 !important;
+}
+
 body {
   background: #000;
 }
@@ -135,6 +139,9 @@ main .content-section .cards .card {
   background: #ffffff;
   padding: .5rem;
   border-radius: .5rem;
+  opacity: 0;
+  -webkit-transition: opacity 350ms linear;
+  transition: opacity 350ms linear;
 }
 
 main .content-section .cards .card-left {

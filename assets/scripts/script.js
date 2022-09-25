@@ -1,6 +1,6 @@
 const skull = document.getElementById('skull');
+const cards = document.querySelectorAll('.card');
 const leftCard = document.getElementById('card-left');
-const rightCard = document.getElementById('card-right');
 const circles = document.getElementsByClassName('circle');
 const contentSection = document.querySelector('.content-section');
 
@@ -26,3 +26,19 @@ window.addEventListener('scroll', () => {
 })
 
 window.addEventListener('resize', moveCircles);
+
+const observer = new IntersectionObserver(
+    entries => {
+        entries.forEach(entry => {
+            entry.target.classList.toggle("show", entry.isIntersecting);
+            if (entry.isIntersecting) observer.unobserve(entry.target)
+        })
+    },
+    {
+        threshold: .75
+    }
+)
+
+cards.forEach(card =>{
+    observer.observe(card);
+})
