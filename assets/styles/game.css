@@ -4,6 +4,7 @@
   padding: 0;
   -webkit-box-sizing: inherit;
           box-sizing: inherit;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -52,6 +53,75 @@ body {
   font-size: 2rem;
 }
 
+.shopUI .options {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+  height: 100%;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: default;
+}
+
+.shopUI .options .option {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
+  font-weight: 700;
+  padding-bottom: .2rem;
+  border-bottom: 2px solid #000;
+}
+
+.shopUI .options .option .levels {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.15rem;
+}
+
+.shopUI .options .option .levels .min-level::after {
+  content: '/';
+}
+
+.shopUI .options .option button {
+  cursor: pointer;
+  font-weight: 700;
+  padding: .5rem 1rem;
+  background: #005000;
+  color: #ffffff;
+  border: none;
+  border-radius: .5rem;
+}
+
+.shopUI .options .option button:focus {
+  outline: none;
+}
+
+.shopUI .options .option button::after {
+  content: '$';
+}
+
 .statsUI {
   display: none;
   position: absolute;
@@ -71,6 +141,30 @@ body {
   text-align: center;
   padding: .5rem 0;
   font-size: 2rem;
+}
+
+.statsUI .stats {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100%;
+  gap: 2rem;
+  font-weight: 700;
+}
+
+.statsUI .stats span {
+  font-size: 1.15rem;
+  color: #c24502;
 }
 
 .content-game {
@@ -252,5 +346,69 @@ body {
 
 .persons .person .stickman {
   width: 200px;
+}
+
+@media (max-width: 750px) {
+  body .content-game .upper-section .upper-section__left .currency {
+    font-size: 1.25rem;
+  }
+  body .content-game .upper-section .upper-section__left .currency .money {
+    font-size: 1rem;
+  }
+  body .content-game .upper-section .upper-section__left .fame {
+    font-size: 1rem;
+  }
+  body .content-game .upper-section .upper-section__left .fame::before {
+    font-size: 1.25rem;
+  }
+  body .content-game .upper-section .upper-section__right .concert {
+    font-weight: 300;
+    padding: .25rem .5rem;
+  }
+  body .content-game .upper-section .upper-section__right .buttons {
+    gap: .5rem;
+  }
+  body .content-game .upper-section .upper-section__right .buttons .button {
+    font-weight: 300;
+    padding: .25rem .5rem;
+  }
+  body .shopUI .options {
+    -webkit-box-pack: initial;
+        -ms-flex-pack: initial;
+            justify-content: initial;
+    padding: 0;
+    gap: 1rem;
+  }
+  body .statsUI .stats {
+    -webkit-box-pack: initial;
+        -ms-flex-pack: initial;
+            justify-content: initial;
+    gap: .5rem;
+  }
+  body #speaker {
+    width: 50px;
+  }
+  body .character-container #bvcovia {
+    height: 100px;
+  }
+  body #microphone {
+    width: 75px;
+  }
+  body .persons {
+    margin-left: 1rem;
+  }
+  body .persons .person .stickman {
+    width: 100px;
+  }
+}
+
+@media (max-width: 600px) {
+  body .content-game .upper-section .upper-section__left {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 0;
+  }
 }
 /*# sourceMappingURL=game.css.map */

@@ -14,6 +14,7 @@ $brown: #c24502
     margin: 0
     padding: 0
     box-sizing: inherit
+    -webkit-tap-highlight-color: transparent
 
 body
     font-size: 100%
@@ -53,6 +54,43 @@ body
         text-align: center
         padding: .5rem 0
         font-size: 2rem
+    .options
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+        gap: 2rem
+        // justify-content: space-evenly
+        padding: 2rem
+        height: 100%
+        user-select: none
+        cursor: default
+        .option
+            display: flex
+            align-items: center
+            gap: 1rem
+            font-weight: 700
+            padding-bottom: .2rem
+            border-bottom: 2px solid $black
+            .levels
+                display: flex
+                align-items: center
+                font-size: 1.15rem
+                .min-level
+                    &::after
+                        content: '/'
+            button
+                cursor: pointer
+                font-weight: 700
+                padding: .5rem 1rem
+                background: $green
+                color: $white
+                border: none
+                border-radius: .5rem
+                &:focus
+                    outline: none
+                &::after
+                    content: '$'
 
 .statsUI
     display: none
@@ -70,6 +108,18 @@ body
         text-align: center
         padding: .5rem 0
         font-size: 2rem
+    .stats
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+        height: 100%
+        gap: 2rem
+        font-weight: 700
+        span
+            font-size: 1.15rem
+            color: $brown
+
 
 .content-game
     display: flex
@@ -180,4 +230,54 @@ body
         .stickman
             width: 200px
 
-
+@media ( max-width: 750px )
+    body
+        .content-game
+            .upper-section
+                .upper-section__left
+                    .currency
+                        font-size: 1.25rem
+                        .money
+                            font-size: 1rem
+                    .fame
+                        font-size: 1rem
+                        &::before
+                            font-size: 1.25rem
+                .upper-section__right
+                    .concert
+                        font-weight: 300
+                        padding: .25rem .5rem
+                    .buttons
+                        gap: .5rem
+                        .button
+                            font-weight: 300
+                            padding: .25rem .5rem
+        .shopUI
+            .options
+                justify-content: initial
+                padding: 0
+                gap: 1rem
+        .statsUI
+            .stats
+                justify-content: initial
+                gap: .5rem
+        #speaker
+            width: 50px
+        .character-container
+            #bvcovia
+                height: 100px
+        #microphone
+            width: 75px
+        .persons
+            margin-left: 1rem
+            .person
+                .stickman
+                    width: 100px
+                
+@media ( max-width: 600px )
+    body
+        .content-game
+            .upper-section
+                .upper-section__left
+                    flex-direction: column
+                    gap: 0
