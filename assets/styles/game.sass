@@ -2,9 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap')
 
 //variables
-$black: #000;
-$white: #ffffff;
-$grey: #4f4f4f;
+$black: #000
+$white: #ffffff
+$grey: #4f4f4f
+$green: #005000
+$blue: #3a96e1
+$brown: #c24502
 
 //resets
 *, *::after, *::before
@@ -17,6 +20,164 @@ body
     font-family: 'Ubuntu', sans-serif
     box-sizing: border-box
 
+//classes
+.display-block
+    display: block !important
+
 // actual styling
 body
-    background: $black
+    background: $white
+    overflow: hidden
+
+.backdrop
+    display: none
+    position: absolute
+    width: 100%
+    height: 100vh
+    background: rgba(0, 0, 0, .4)
+    z-index: 999
+
+.shopUI
+    display: none
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    width: 70%
+    height: 70vh
+    max-width: 600px
+    background: $white
+    z-index: 1001
+    border-radius: 1rem
+    h2
+        text-align: center
+        padding: .5rem 0
+        font-size: 2rem
+
+.statsUI
+    display: none
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    width: 70%
+    height: 70vh
+    max-width: 600px
+    background: $white
+    z-index: 1001
+    border-radius: 1rem
+    h2
+        text-align: center
+        padding: .5rem 0
+        font-size: 2rem
+
+.content-game
+    display: flex
+    flex-direction: column
+    width: 100%
+    height: 100vh
+
+.upper-section
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 1rem 2rem
+    background: $brown
+    .upper-section__left
+        display: flex
+        align-items: center
+        gap: 2rem
+        .currency
+            font-weight: 700
+            font-size: 2rem
+            color: lighten($green, 25%)
+            .money
+                font-size: 1.75rem
+        .fame
+            font-weight: 700
+            font-size: 1.5rem
+            &::before
+                content: 'Fame: '
+                font-size: 2rem
+
+    .upper-section__right
+        display: flex
+        gap: 1rem
+        .concert
+            font-weight: 700
+            padding: .5rem 2rem
+            background: $grey
+            color: lighten($grey, 50%)
+            cursor: not-allowed
+            user-select: none
+            border-radius: .5rem
+
+        .buttons
+            display: flex
+            gap: 1rem
+            button
+                font-weight: 700
+                padding: .5rem 1rem
+                color: $white
+                border: none
+                border-radius: .5rem
+                cursor: pointer
+                &:focus
+                    outline: none
+            #shop-button
+                background: $green
+            #stats-button
+                background: lighten($brown, 50%)
+                color: $black
+
+.middle-section
+    display: flex
+    align-items: flex-end
+    height: 100%
+    background: $blue
+
+.floor-section
+    width: 100%
+    height: 4rem
+    background: $green
+
+.character-container    
+    position: relative
+    #bvcovia
+        height: 200px
+        cursor: pointer
+        transform: translateY(.2rem)
+    span
+        display: none
+        position: absolute
+        top: -3rem
+        right: -3rem
+        color: $green
+        font-weight: 700
+        background: $white
+        padding: .5rem 1rem
+        border-radius: 3rem
+        &::before 
+            content: 'Yass! Am facut '
+            color: $black
+        &::after
+            content: ' $'   
+            color: $black
+
+
+#microphone
+    width: 100px
+    transform: rotateY(180deg) translateY(.3rem)
+
+#speaker
+    width: 100px
+
+.persons
+    display: flex
+    margin-left: 5rem
+    .person
+        transform: translateY(.3rem)
+        .stickman
+            width: 200px
+
+
