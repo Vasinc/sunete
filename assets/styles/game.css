@@ -18,6 +18,11 @@ body {
   display: block !important;
 }
 
+.display-grid {
+  display: -ms-grid !important;
+  display: grid !important;
+}
+
 body {
   background: #ffffff;
   overflow: hidden;
@@ -30,6 +35,26 @@ body {
   height: 100vh;
   background: rgba(0, 0, 0, 0.4);
   z-index: 999;
+}
+
+.concertUI {
+  display: none;
+  place-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  background: #ffffff;
+  padding: 4rem;
+  font-size: 5rem;
+  font-weight: 700;
+  z-index: 10001;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .shopUI {
@@ -231,16 +256,36 @@ body {
 }
 
 .upper-section .upper-section__right .concert {
+  position: relative;
   font-weight: 700;
   padding: .5rem 2rem;
-  background: #4f4f4f;
-  color: #cfcfcf;
+  background: #2b0f00;
+  color: #ffffff;
   cursor: not-allowed;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
   border-radius: .5rem;
+}
+
+.upper-section .upper-section__right .concert:hover .concert__info {
+  display: block;
+}
+
+.upper-section .upper-section__right .concert .concert__info {
+  display: none;
+  position: absolute;
+  left: 0;
+  bottom: -5.5rem;
+  padding: .5rem 1rem;
+  background: #ffffff;
+  color: #000;
+  border-radius: .5rem;
+}
+
+.upper-section .upper-section__right .concert .concert__info .concert__info-number {
+  color: #c24502;
 }
 
 .upper-section .upper-section__right .buttons {

@@ -3,6 +3,9 @@ const shopBtn = document.getElementById('shop-button');
 const shopUI = document.querySelector('.shopUI');
 const statsBtn = document.getElementById('stats-button');
 const statsUI = document.querySelector('.statsUI');
+const concertBtn = document.querySelector('.concert');
+const concertUI= document.querySelector('.concertUI');
+const concertRequierment = document.querySelector('.concert__info-number');
 const bvcovia = document.getElementById('bvcovia');
 const bvcoviaText = document.querySelector('.bvcovia_text');
 const money = document.querySelector('.money');
@@ -47,6 +50,8 @@ function updateFame () {
     fame.textContent = FAME_VAL;
 }
 
+updateFame();
+
 function updateStats() {
     document.querySelector('.stat__min-money_sing').textContent = singingMoney[0];
     document.querySelector('.stat__max-money_sing').textContent = singingMoney[1];
@@ -75,11 +80,16 @@ function sing () {
         bvcovia.style.cursor = 'pointer';
         bvcoviaText.textContent = rndNum;
         bvcoviaText.classList.add('display-block');
+        if(parseInt(concertRequierment.textContent) <= FAME_VAL) {
+            concertBtn.style.cursor = 'pointer';
+        } else {
+            concertBtn.style.cursor = 'not-allowed'
+        }
         setTimeout(() => {
             bvcoviaText.classList.remove('display-block');
-        }, 2000)
+        }, 1500)
     },
-    4500
+    4000
     )
 }
 
@@ -137,4 +147,35 @@ shopUI.addEventListener('click', (event) => {
 statsBtn.addEventListener('click', () => {
     toggleBackdrop();
     statsUI.classList.add('display-block');
+})
+
+concertBtn.addEventListener('click', () => {
+    if(parseInt(concertRequierment.textContent) <= FAME_VAL) {
+        concertRequierment.textContent = parseInt(concertRequierment.textContent) * 2
+        concertUI.classList.add('display-grid')
+        setTimeout(() => {
+            const rndNum = Math.trunc(Math.random() * (concertMoney[1] - concertMoney[0]) + concertMoney[0])
+            document.querySelector('.concert-text').textContent = `CONCERTUL A FOST UN SUCCES! AI FĂCUT ${rndNum}$ ȘI ${concertMultiplier} DE FANI!`
+            MONEY_VAL += rndNum;
+            FAME_VAL += concertMultiplier;
+            updateFame();
+            updateMoney();
+            crowd.play();
+            setTimeout(() => {
+                concertUI.classList.remove('display-grid')
+                document.querySelector('.concert-text').textContent = 'CONCERTUL ARE LOC ACUM...';
+                crowd.pause();
+                crowd.currentTime = 0;
+                if(parseInt(concertRequierment.textContent) <= FAME_VAL) {
+                    concertBtn.style.cursor = 'pointer';
+                } else {
+                    concertBtn.style.cursor = 'not-allowed'
+                }
+            }
+            ,5000)
+        }
+        ,3000)
+    } else {
+        return;
+    }
 })
