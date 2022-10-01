@@ -23,437 +23,65 @@ body {
   display: grid !important;
 }
 
-body {
-  background: #ffffff;
-  overflow: hidden;
-}
-
-.backdrop {
-  display: none;
-  position: absolute;
-  width: 100%;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.4);
-  z-index: 999;
-}
-
-.concertUI {
-  display: none;
-  place-items: center;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  text-align: center;
-  background: #ffffff;
-  padding: 4rem;
-  font-size: 5rem;
-  font-weight: 700;
-  z-index: 10001;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-}
-
-.shopUI {
-  display: none;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  width: 70%;
-  height: 70vh;
-  max-width: 600px;
-  background: #ffffff;
-  z-index: 1001;
-  border-radius: 1rem;
-}
-
-.shopUI h2 {
-  text-align: center;
-  padding: .5rem 0;
-  font-size: 2rem;
-}
-
-.shopUI .options {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  gap: 2rem;
-  padding: 2rem;
-  height: 100%;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  cursor: default;
-}
-
-.shopUI .options .option {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 1rem;
-  font-weight: 700;
-  padding-bottom: .2rem;
-  border-bottom: 2px solid #000;
-}
-
-.shopUI .options .option .levels {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  font-size: 1.15rem;
-}
-
-.shopUI .options .option .levels .min-level::after {
-  content: '/';
-}
-
-.shopUI .options .option button {
-  cursor: pointer;
-  font-weight: 700;
-  padding: .5rem 1rem;
-  background: #005000;
-  color: #ffffff;
-  border: none;
-  border-radius: .5rem;
-}
-
-.shopUI .options .option button:focus {
-  outline: none;
-}
-
-.shopUI .options .option button::after {
-  content: '$';
-}
-
-.statsUI {
-  display: none;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  width: 70%;
-  height: 70vh;
-  max-width: 600px;
-  background: #ffffff;
-  z-index: 1001;
-  border-radius: 1rem;
-}
-
-.statsUI h2 {
-  text-align: center;
-  padding: .5rem 0;
-  font-size: 2rem;
-}
-
-.statsUI .stats {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  height: 100%;
-  gap: 2rem;
-  font-weight: 700;
-}
-
-.statsUI .stats span {
-  font-size: 1.15rem;
-  color: #c24502;
-}
-
-.content-game {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  width: 100%;
-  height: 100vh;
-}
-
-.upper-section {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+header {
+  background: #000;
   padding: 1rem 2rem;
-  background: #c24502;
 }
 
-.upper-section .upper-section__left {
+header a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+main {
+  height: 900px;
+}
+
+footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  background: #000;
+  color: white;
+  padding: 2rem;
+  font-size: 1.15rem;
+  font-weight: 300;
   gap: 2rem;
 }
 
-.upper-section .upper-section__left .currency {
+footer a {
   font-weight: 700;
-  font-size: 2rem;
-  color: #00d000;
+  color: #4f4f4f;
+  text-decoration: none;
 }
 
-.upper-section .upper-section__left .currency .money {
-  font-size: 1.75rem;
+footer ul {
+  list-style: none;
 }
 
-.upper-section .upper-section__left .fame {
+footer ul li:first-of-type {
   font-weight: 700;
-  font-size: 1.5rem;
 }
 
-.upper-section .upper-section__left .fame::before {
-  content: 'Fame: ';
-  font-size: 2rem;
-}
-
-.upper-section .upper-section__right {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 1rem;
-}
-
-.upper-section .upper-section__right .concert {
-  position: relative;
-  font-weight: 700;
-  padding: .5rem 2rem;
-  background: #2b0f00;
-  color: #ffffff;
-  cursor: not-allowed;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  border-radius: .5rem;
-}
-
-.upper-section .upper-section__right .concert:hover .concert__info {
-  display: block;
-}
-
-.upper-section .upper-section__right .concert .concert__info {
-  display: none;
-  position: absolute;
-  left: 0;
-  bottom: -5.5rem;
-  padding: .5rem 1rem;
-  background: #ffffff;
-  color: #000;
-  border-radius: .5rem;
-}
-
-.upper-section .upper-section__right .concert .concert__info .concert__info-number {
-  color: #c24502;
-}
-
-.upper-section .upper-section__right .buttons {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 1rem;
-}
-
-.upper-section .upper-section__right .buttons button {
-  font-weight: 700;
-  padding: .5rem 1rem;
-  color: #ffffff;
-  border: none;
-  border-radius: .5rem;
-  cursor: pointer;
-}
-
-.upper-section .upper-section__right .buttons button:focus {
-  outline: none;
-}
-
-.upper-section .upper-section__right .buttons #shop-button {
-  background: #005000;
-}
-
-.upper-section .upper-section__right .buttons #stats-button {
-  background: #fed9c5;
-  color: #000;
-}
-
-.middle-section {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
-  height: 100%;
-  background: #3a96e1;
-}
-
-.floor-section {
-  width: 100%;
-  height: 4rem;
-  background: #005000;
-}
-
-.character-container {
-  position: relative;
-}
-
-.character-container #bvcovia {
-  height: 200px;
-  cursor: pointer;
-  -webkit-transform: translateY(0.2rem);
-          transform: translateY(0.2rem);
-}
-
-.character-container span {
-  display: none;
-  position: absolute;
-  top: -3rem;
-  right: -3rem;
-  color: #005000;
-  font-weight: 700;
-  background: #ffffff;
-  padding: .5rem 1rem;
-  border-radius: 3rem;
-}
-
-.character-container span::before {
-  content: 'Yass! Am facut ';
-  color: #000;
-}
-
-.character-container span::after {
-  content: ' $';
-  color: #000;
-}
-
-#microphone {
-  width: 100px;
-  -webkit-transform: rotateY(180deg) translateY(0.3rem);
-          transform: rotateY(180deg) translateY(0.3rem);
-}
-
-#speaker {
-  width: 100px;
-}
-
-.persons {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin-left: 5rem;
-}
-
-.persons .person {
-  -webkit-transform: translateY(0.3rem);
-          transform: translateY(0.3rem);
-}
-
-.persons .person .stickman {
-  width: 200px;
-}
-
-@media (max-width: 750px) {
-  body .content-game .upper-section .upper-section__left .currency {
-    font-size: 1.25rem;
-  }
-  body .content-game .upper-section .upper-section__left .currency .money {
-    font-size: 1rem;
-  }
-  body .content-game .upper-section .upper-section__left .fame {
-    font-size: 1rem;
-  }
-  body .content-game .upper-section .upper-section__left .fame::before {
-    font-size: 1.25rem;
-  }
-  body .content-game .upper-section .upper-section__right .concert {
-    font-weight: 300;
-    padding: .25rem .5rem;
-  }
-  body .content-game .upper-section .upper-section__right .buttons {
-    gap: .5rem;
-  }
-  body .content-game .upper-section .upper-section__right .buttons .button {
-    font-weight: 300;
-    padding: .25rem .5rem;
-  }
-  body .shopUI .options {
-    -webkit-box-pack: initial;
-        -ms-flex-pack: initial;
-            justify-content: initial;
-    padding: 0;
-    gap: 1rem;
-  }
-  body .statsUI .stats {
-    -webkit-box-pack: initial;
-        -ms-flex-pack: initial;
-            justify-content: initial;
-    gap: .5rem;
-  }
-  body #speaker {
-    width: 50px;
-  }
-  body .character-container #bvcovia {
-    height: 100px;
-  }
-  body #microphone {
-    width: 75px;
-  }
-  body .persons {
-    margin-left: 1rem;
-  }
-  body .persons .person .stickman {
-    width: 100px;
-  }
-}
-
-@media (max-width: 600px) {
-  body .content-game .upper-section .upper-section__left {
-    -webkit-box-orient: vertical;
+@media screen and (min-width: 800px) {
+  body footer {
+    -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    gap: 0;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 }
 /*# sourceMappingURL=game.css.map */

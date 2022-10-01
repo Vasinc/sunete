@@ -11,133 +11,135 @@ $grey: #656565;
     margin: 0
     padding: 0
     box-sizing: inherit
+    -webkit-tap-highlight-color: transparent
 
 body
     font-size: 100%
     font-family: 'Ubuntu', sans-serif
     box-sizing: border-box
 
+html
+    scroll-behavior: smooth
+
 //classes
-.show
-    opacity: 1 !important
+.display-block
+    display: block !important
+
+.display-flex
+    display: flex   !important
 
 // actual styling
-body
-    background: $black
+.backdrop
+    display: none
+    position: absolute
+    width: 100%
+    height: 100%
+    background: rgba(0, 0, 0, .6)
+    z-index: 9999
+
 header
-    text-align: right
-    padding: 1rem 3rem
-    #gameLink
-        position: relative
-        text-decoration: none
-        color: $white
-        font-size: 1.5rem
-        font-weight: 700
-        -webkit-tap-highlight-color: transparent
-        &::after
-            content: '>'
+    width: 100%
+    height: 100vh
+    .navbar
+        display: flex
+        justify-content: space-between
+        align-items: center
+        padding: 1rem
+        background: $black
+        #home
+            color: $white
+            font-weight: 700
+            font-size: 1.25rem
+            text-decoration: none
+        .links
             position: absolute
-            margin-left: .5rem
-            transition: all 200ms ease-out
-        &:hover
-            text-decoration: underline
-            &::after
-                color: $grey
-                transform: translateX(.8rem)
-
-main
-    .upper-section
-        position: relative
-        width: 100%
-        height: 100vh
-        overflow: hidden
-        // background: url('../images/background.jpg')
-        // background-repeat: no-repeat
-        // background-position: center
-        // background-size: 100%
-        &::before
-            content: ' '
-            position: absolute
+            display: none
+            flex-direction: column
+            gap: 3rem
             top: 0
-            width: 100%
-            height: 50px
-            background: linear-gradient(to bottom, $black, transparent) 
-        &::after
-            content: ' '
-            position: absolute
-            bottom: 0
-            left: 0
-            width: 100%
-            height: 200px
-            background: linear-gradient(to top, $black, transparent) 
-
-        #background
-            width: 100%
+            right: 0
             height: 100%
-        #skull
-            position: absolute
-            width: 70%
-            max-width: 400px
-            top: 40%
-            left: 50%
-            transform: translate(-50%, -50%)
-    .content-section
+            padding: 3rem 5rem
+            background: $white
+            list-style: none
+            z-index: 10000
+            li
+                a
+                    text-decoration: none
+                    color: $black
+                    font-weight: 700
+                    font-size: 1.15rem
+            
+    .burger-menu
+        display: flex
+        flex-direction: column
+        gap: .3rem
+        width: 1.5rem
+        transform: rotateY(180deg)
+        cursor: pointer
+        span
+            width: 100%
+            height: 2px
+            background: $white
+        span:nth-of-type(2)
+            width: 75%
+        span:nth-of-type(3)
+            width: 50%
+
+    .theater
         position: relative
-        top: 2rem
-        // height: 2000px
-        padding: 2rem 0
+        display: grid
+        place-items: center
         width: 100%
+        height: 100%
+        background: url('../images/background.jpg')
+        background-repeat: no-repeat
+        background-position: center
+        background-size: cover
         &::before
             content: ''
             position: absolute
-            left: 50%
-            height: 100%
-            width: .5rem
-            background: $white
-            border-radius: 1rem
-        .cards
-            display: flex
-            flex-direction: column
-            align-items: center
-            gap: 2rem
-            margin: auto
-            margin-top: 2rem 
-            padding: 0 1rem
-            max-width: 853px
-            color: $black
-            .card
-                position: relative
-                width: 40%
-                max-width: 350px
-                background: $white
-                padding: .5rem
-                border-radius: .5rem
-                opacity: 0
-                transition: opacity 350ms linear
-            .card-left
-                margin-right: 100%
-                transform: translateX(50%)
-                .circle
-                    position: absolute
-                    top: 50%
-                    // right: -36px
-                    width: 1.5rem
-                    height: 1.5rem
-                    background: black
-                    border: 3px solid $white
-                    border-radius: 50%
-            .card-right
-                margin-left: 100%
-                transform: translateX(-50%)
+            top: -1px
+            width: 100%
+            height: 4rem
+            background: linear-gradient(to bottom, $black 10%, transparent 70%)
+            z-index: 1000
+        img
+            position: absolute
+            width: 70%
+            max-width: 300px
+main
+    section
+        display: grid
+        place-items: center
+        height: 100vh
+        width: 100%
+        font-size: 2rem
+        font-weight: 700
+        
 
+#section1
+    background: red
+
+#section2
+    background: blue
+
+#section3
+    background: green
+
+#section4
+    background: pink
+
+#section5
+    background: brown
 
 footer
     display: flex
     flex-direction: column
-    margin-top: 6rem
     text-align: center
+    background: $black
     color: white
-    padding: 1rem
+    padding: 2rem
     font-size: 1.15rem
     font-weight: 300
     gap: 2rem
@@ -152,19 +154,30 @@ footer
 
 @media screen and ( min-width:800px )
     body
-        main
-            .upper-section
-                #skull
-                    width: 50%
-                    max-width: 500px
-            .content-section
-                top: 4rem
-                // &::before
-                //     top: 8rem
         footer
-            margin-top: 12rem
             flex-direction: row
             justify-content: space-evenly
             align-items: center
+
+@media ( min-width: 1000px ) 
+    body
+        header
+            .navbar
+                padding: 2rem
+                .links
+                    position: initial
+                    display: flex
+                    flex-direction: row
+                    background: $black
+                    padding: 0
+                    li
+                        a
+                            color: $white
+                            font-size: 1.05rem
+                .burger-menu
+                    display: none
+            .theater
+                img
+                    max-width: 400px
 
                 

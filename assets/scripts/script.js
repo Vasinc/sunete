@@ -1,44 +1,30 @@
-const skull = document.getElementById('skull');
-const cards = document.querySelectorAll('.card');
-const leftCard = document.getElementById('card-left');
-const circles = document.getElementsByClassName('circle');
-const contentSection = document.querySelector('.content-section');
+const backdrop = document.querySelector('.backdrop');
+const burgerMenu = document.querySelector('.burger-menu');
+const links = document.querySelector('.links');
 
-function moveCircles() {
-    const sectionCenter = Math.trunc(contentSection.clientWidth / 2); 
-    const offsetLeftCard = leftCard.getBoundingClientRect().right;
-
-    const LEFT_DIFFERENCE = Math.trunc(sectionCenter - offsetLeftCard);
-
-    for (let i = 0; i < circles.length; i++) {
-        const element = circles[i];
-
-        element.style.right = `-${LEFT_DIFFERENCE + 17}px`
-    }
+function removeBackdrop() {
+    backdrop.classList.remove('display-block');
+    links.classList.remove('display-flex');
+    document.body.style.overflow = 'visible';
 }
 
-window.onload = moveCircles;
+backdrop.addEventListener('click', removeBackdrop)
 
-window.addEventListener('scroll', () => {
-    const scrollY = Math.trunc(window.scrollY / 10);
-
-    skull.style.transform = `translate(-50%, calc(-50% + ${scrollY}%))`
+burgerMenu.addEventListener('click', () => {
+    backdrop.classList.add('display-block');
+    links.classList.add('display-flex');
+    backdrop.scrollIntoView();
+    document.body.style.overflow = 'hidden';
 })
 
-window.addEventListener('resize', moveCircles);
-
-const observer = new IntersectionObserver(
-    entries => {
-        entries.forEach(entry => {
-            entry.target.classList.toggle("show", entry.isIntersecting);
-            if (entry.isIntersecting) observer.unobserve(entry.target)
-        })
-    },
-    {
-        threshold: .2
+links.addEventListener('click', event => {
+    if (event.target.className == 'link') {
+        removeBackdrop();
     }
-)
+})
 
-cards.forEach(card =>{
-    observer.observe(card);
+addEventListener('resize', () => {
+    if (innerWidth >= 1000 ) {
+        removeBackdrop();
+    }
 })
