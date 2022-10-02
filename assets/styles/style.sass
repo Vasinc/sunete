@@ -36,7 +36,7 @@ html
     transform: translateX(0) !important
 
 // waves
-.wave
+.wave1
     position: absolute
     bottom: 0
     left: 0
@@ -48,18 +48,41 @@ html
         display: block
         width: calc(140% + 1.3px)
         height: 116px
-        
-.wave1
     .shape-fill
             fill: blue
 
 .wave2
-    .shape-fill
-            fill: green
+    position: absolute
+    bottom: 0
+    left: 0
+    width: 100%
+    overflow: hidden
+    line-height: 0
+    transform: rotate(180deg)
+    svg
+        position: relative
+        display: block
+        width: calc(158% + 1.3px)
+        height: 203px
+    .shape-fill 
+        fill: green
 
 .wave3
+    position: absolute
+    bottom: 0
+    left: 0
+    width: 100%
+    overflow: hidden
+    line-height: 0
+    transform: rotate(180deg)
+    svg
+        position: relative
+        display: block
+        width: calc(158% + 1.3px)
+        height: 100px
+        transform: rotateY(180deg)
     .shape-fill
-            fill: black
+        fill: $black
 
 
     
@@ -146,6 +169,10 @@ html
                 align-items: center
                 height: 100%
                 padding: 2rem
+                // font-size: 1.15rem
+                .page_title
+                    font-weight: 700
+                    font-size: 1.3rem
                 .page-number
                     margin-top: auto
                     text-align: center
@@ -172,11 +199,14 @@ html
                 ul
                     display: flex
                     flex-direction: column
-                    gap: 3rem
+                    gap: 1.5rem
                     list-style: none
                     li
                         font-weight: 700
                         font-size: 1.15rem
+        .page:nth-of-type(6)
+            .page-content
+                font-size: .75rem
 
 header
     width: 100%
@@ -342,6 +372,14 @@ footer
                 color: $white
                 font-weight: 400
                 text-decoration: underline
+
+@media ( min-width: 450px ) 
+    body
+        #story-book
+            .pages
+                .page:nth-of-type(6)
+                    .page-content
+                        font-size: 1rem
 
 @media screen and ( min-width:800px )
     body

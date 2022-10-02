@@ -38,7 +38,7 @@ html {
           transform: translateX(0) !important;
 }
 
-.wave {
+.wave1 {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -47,7 +47,7 @@ html {
   line-height: 0;
 }
 
-.wave svg {
+.wave1 svg {
   position: relative;
   display: block;
   width: calc(140% + 1.3px);
@@ -58,12 +58,50 @@ html {
   fill: blue;
 }
 
+.wave2 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.wave2 svg {
+  position: relative;
+  display: block;
+  width: calc(158% + 1.3px);
+  height: 203px;
+}
+
 .wave2 .shape-fill {
   fill: green;
 }
 
+.wave3 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.wave3 svg {
+  position: relative;
+  display: block;
+  width: calc(158% + 1.3px);
+  height: 100px;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
 .wave3 .shape-fill {
-  fill: black;
+  fill: #000;
 }
 
 .backdrop {
@@ -188,6 +226,11 @@ html {
   padding: 2rem;
 }
 
+#story-book .pages .page .page-content .page_title {
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
 #story-book .pages .page .page-content .page-number {
   margin-top: auto;
   text-align: center;
@@ -229,13 +272,17 @@ html {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 3rem;
+  gap: 1.5rem;
   list-style: none;
 }
 
 #story-book .pages .page:nth-of-type(2) .page-content ul li {
   font-weight: 700;
   font-size: 1.15rem;
+}
+
+#story-book .pages .page:nth-of-type(6) .page-content {
+  font-size: .75rem;
 }
 
 header {
@@ -500,6 +547,12 @@ footer ul li a {
   color: #ffffff;
   font-weight: 400;
   text-decoration: underline;
+}
+
+@media (min-width: 450px) {
+  body #story-book .pages .page:nth-of-type(6) .page-content {
+    font-size: 1rem;
+  }
 }
 
 @media screen and (min-width: 800px) {
