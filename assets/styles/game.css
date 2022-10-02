@@ -176,6 +176,12 @@ footer ul li:first-of-type {
   font-weight: 700;
 }
 
+footer ul li a {
+  color: #ffffff;
+  font-weight: 400;
+  text-decoration: underline;
+}
+
 @media screen and (min-width: 800px) {
   body main {
     gap: 3rem;

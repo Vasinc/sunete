@@ -63,11 +63,7 @@ html {
 }
 
 .wave3 .shape-fill {
-  fill: pink;
-}
-
-.wave4 .shape-fill {
-  fill: brown;
+  fill: black;
 }
 
 .backdrop {
@@ -457,16 +453,6 @@ section {
   top: -2px;
 }
 
-#section4 {
-  background: pink;
-  top: -3px;
-}
-
-#section5 {
-  background: brown;
-  top: -4px;
-}
-
 footer {
   position: relative;
   top: -5px;
@@ -508,6 +494,12 @@ footer ul {
 
 footer ul li:first-of-type {
   font-weight: 700;
+}
+
+footer ul li a {
+  color: #ffffff;
+  font-weight: 400;
+  text-decoration: underline;
 }
 
 @media screen and (min-width: 800px) {

@@ -20,7 +20,10 @@ const titles = [
     {title: 'Unei fecioare', song:piano},
     {title: 'Nevroză', song:piano},
     {title: 'Toamnă murind', song: violin},
-    {title: 'Tu ai murit...', song:violin}
+    {title: 'Tu ai murit...', song:violin},
+    {title: 'Singur', song:recorder},
+    {title: 'Nocturnă', song: recorder},
+    {title: 'Miazăzi de vară', song: organ}
 ]
 
 function generateNewTitle() {
