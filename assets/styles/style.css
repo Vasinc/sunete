@@ -28,6 +28,48 @@ html {
   display: flex   !important;
 }
 
+.translateY {
+  -webkit-transform: translateY(0) !important;
+          transform: translateY(0) !important;
+}
+
+.translateX {
+  -webkit-transform: translateX(0) !important;
+          transform: translateX(0) !important;
+}
+
+.wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.wave svg {
+  position: relative;
+  display: block;
+  width: calc(140% + 1.3px);
+  height: 116px;
+}
+
+.wave1 .shape-fill {
+  fill: blue;
+}
+
+.wave2 .shape-fill {
+  fill: green;
+}
+
+.wave3 .shape-fill {
+  fill: pink;
+}
+
+.wave4 .shape-fill {
+  fill: red;
+}
+
 .backdrop {
   display: none;
   position: absolute;
@@ -309,7 +351,89 @@ header .theater img {
   max-width: 300px;
 }
 
-main section {
+main {
+  margin-top: 6rem;
+}
+
+.definitions-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 3rem;
+  width: 90%;
+  max-width: 700px;
+  margin: 3rem auto;
+}
+
+.definitions-section .definition {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 2rem;
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid #656565;
+  border-radius: .5rem;
+  -webkit-box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
+          box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
+  -webkit-transform: translateY(6rem);
+          transform: translateY(6rem);
+  -webkit-transition: -webkit-transform 300ms ease-out;
+  transition: -webkit-transform 300ms ease-out;
+  transition: transform 300ms ease-out;
+  transition: transform 300ms ease-out, -webkit-transform 300ms ease-out;
+}
+
+.definitions-section .definition h2 {
+  text-align: center;
+}
+
+.definitions-section .definition .texts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1rem;
+  -webkit-transform: translateX(-2rem);
+          transform: translateX(-2rem);
+  -webkit-transition: -webkit-transform 300ms ease-out;
+  transition: -webkit-transform 300ms ease-out;
+  transition: transform 300ms ease-out;
+  transition: transform 300ms ease-out, -webkit-transform 300ms ease-out;
+}
+
+.definitions-section .definition .texts .text {
+  padding: .5rem;
+  max-width: 600px;
+  border: 2px solid #656565;
+  border-radius: .5rem;
+  -webkit-box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.6);
+          box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.6);
+}
+
+.definitions-section .definition .texts .text span {
+  font-weight: 700;
+}
+
+section {
+  position: relative;
   display: -ms-grid;
   display: grid;
   place-items: center;
@@ -325,21 +449,27 @@ main section {
 
 #section2 {
   background: blue;
+  top: -1px;
 }
 
 #section3 {
   background: green;
+  top: -2px;
 }
 
 #section4 {
   background: pink;
+  top: -3px;
 }
 
 #section5 {
   background: brown;
+  top: -4px;
 }
 
 footer {
+  position: relative;
+  top: -5px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -354,6 +484,16 @@ footer {
   font-size: 1.15rem;
   font-weight: 300;
   gap: 2rem;
+}
+
+footer::before {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 7px;
+  background: #000;
 }
 
 footer a {
@@ -371,6 +511,9 @@ footer ul li:first-of-type {
 }
 
 @media screen and (min-width: 800px) {
+  body main .definitions-section .definition .texts {
+    gap: 2rem;
+  }
   body footer {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;

@@ -4,6 +4,27 @@ const links = document.querySelector('.links');
 const bookArrow = document.getElementById('bookArrow');
 const storyBook = document.getElementById('story-book');
 const pages = document.querySelector('.pages');
+const definitions = document.querySelectorAll('.definition');
+const texts = document.querySelectorAll('.texts')
+
+const observerY = new IntersectionObserver( entries => {
+    entries.forEach(entry => {
+        entry.target.classList.toggle("translateY", entry.isIntersecting);
+        if (entry.isIntersecting) observerY.unobserve(entry.target);
+    })
+},
+{
+    threshold: .1
+}
+)
+
+const observerX = new IntersectionObserver( entries => {
+    entries.forEach(entry => {
+        entry.target.classList.toggle("translateX", entry.isIntersecting);
+        if (entry.isIntersecting) observerX.unobserve(entry.target);
+    })
+}
+)
 
 const audio = new Audio('./assets/sounds/page flip.mp3')
 
@@ -65,12 +86,31 @@ storyBook.addEventListener('click', event => {
         isSoundPlaying = true;
         setTimeout(() => {
             isSoundPlaying = false;
-        }, 1000);
+            audio.pause();
+            audio.currentTime = 0;
+        }, 500);
     } else if(event.target.className == 'left-arrow' && !isSoundPlaying) {
         pagesPercentage +=100;
         pages.style.transform = `translate(${pagesPercentage}%)`
         audio.play();
+        isSoundPlaying = true;
+        setTimeout(() => {
+            isSoundPlaying = false;
+            audio.pause();
+            audio.currentTime = 0;
+        }, 500);
     } else {
         return;
     }
+})
+
+definitions.forEach(definition => {
+    console.log(definition);
+    observerY.observe(definition);
+})
+
+texts.forEach(text => {
+    setTimeout(() => {
+        observerX.observe(text);
+    }, 200);
 })

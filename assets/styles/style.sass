@@ -5,6 +5,7 @@
 $black: #000
 $white: #ffffff
 $grey: #656565
+$marginTop: 6rem
 
 //resets
 *, *::after, *::before
@@ -28,6 +29,44 @@ html
 .display-flex
     display: flex   !important
 
+.translateY
+    transform: translateY(0) !important
+
+.translateX
+    transform: translateX(0) !important
+
+// waves
+.wave
+    position: absolute
+    bottom: 0
+    left: 0
+    width: 100%
+    overflow: hidden
+    line-height: 0
+    svg
+        position: relative
+        display: block
+        width: calc(140% + 1.3px)
+        height: 116px
+        
+.wave1
+    .shape-fill
+            fill: blue
+
+.wave2
+    .shape-fill
+            fill: green
+
+.wave3
+    .shape-fill
+            fill: pink
+        
+.wave4
+    .shape-fill
+            fill: red
+
+
+    
 // actual styling
 
 .backdrop
@@ -215,13 +254,52 @@ header
             width: 70%
             max-width: 300px
 main
-    section
-        display: grid
-        place-items: center
-        height: 100vh
+    margin-top: $marginTop
+
+.definitions-section
+    display: flex
+    flex-direction: column
+    align-items: center
+    gap: 3rem
+    width: 90%
+    max-width: 700px
+    margin: 3rem auto
+    .definition
+        display: flex
+        flex-direction: column
+        align-items: center
+        gap: 2rem
         width: 100%
-        font-size: 2rem
-        font-weight: 700
+        padding: 1rem
+        border: 2px solid $grey
+        border-radius: .5rem
+        box-shadow: 4px 4px 4px rgba(0, 0, 0, .5)
+        transform: translateY(6rem)
+        transition: transform 300ms ease-out
+        h2
+            text-align: center
+        .texts
+            display: flex
+            flex-direction: column
+            gap: 1rem
+            transform: translateX(-2rem)
+            transition: transform 300ms ease-out
+            .text
+                padding: .5rem
+                max-width: 600px
+                border: 2px solid $grey
+                border-radius: .5rem
+                box-shadow: 4px 4px 6px rgba(0, 0, 0, .6)
+                span
+                    font-weight: 700
+section
+    position: relative
+    display: grid
+    place-items: center
+    height: 100vh
+    width: 100%
+    font-size: 2rem
+    font-weight: 700
         
 
 #section1
@@ -229,17 +307,23 @@ main
 
 #section2
     background: blue
+    top: -1px
 
 #section3
     background: green
+    top: -2px
 
 #section4
     background: pink
+    top: -3px
 
 #section5
     background: brown
+    top: -4px
 
 footer
+    position: relative
+    top: -5px
     display: flex
     flex-direction: column
     text-align: center
@@ -249,6 +333,14 @@ footer
     font-size: 1.15rem
     font-weight: 300
     gap: 2rem
+    &::before
+        content: ''
+        position: absolute
+        bottom: -4px
+        left: 0
+        width: 100%
+        height: 7px
+        background: $black
     a
         font-weight: 700
         color: $grey
@@ -260,6 +352,11 @@ footer
 
 @media screen and ( min-width:800px )
     body
+        main
+            .definitions-section
+                .definition
+                    .texts
+                        gap: 2rem
         footer
             flex-direction: row
             justify-content: space-evenly
