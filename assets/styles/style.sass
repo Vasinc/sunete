@@ -5,6 +5,7 @@
 $black: #000
 $white: #ffffff
 $grey: #656565
+$purple: #4a072f
 $marginTop: 6rem
 
 //resets
@@ -49,7 +50,7 @@ html
         width: calc(140% + 1.3px)
         height: 116px
     .shape-fill
-            fill: blue
+            fill: $white
 
 .wave2
     position: absolute
@@ -65,7 +66,7 @@ html
         width: calc(158% + 1.3px)
         height: 203px
     .shape-fill 
-        fill: green
+        fill: $purple
 
 .wave3
     position: absolute
@@ -169,7 +170,6 @@ html
                 align-items: center
                 height: 100%
                 padding: 2rem
-                // font-size: 1.15rem
                 .page_title
                     font-weight: 700
                     font-size: 1.3rem
@@ -320,24 +320,40 @@ main
                     font-weight: 700
 section
     position: relative
-    display: grid
-    place-items: center
-    height: 100vh
+    padding: 2rem
+    padding-bottom: 10rem
     width: 100%
-    font-size: 2rem
     font-weight: 700
-        
+    h2
+        font-size: 2rem
+        text-align: center
+        text-decoration: underline
+    p
+        max-width: 700px
+        margin: auto
+
 
 #section1
-    background: red
+    background: darken($grey, 25%)
+    color: $white
 
 #section2
-    background: blue
+    background: $white
     top: -1px
 
 #section3
-    background: green
+    background: $purple
     top: -2px
+    color: $white
+    .conclusion 
+        max-width: 700px
+        margin: 2rem auto
+        padding: 1rem
+        background: darken($purple, 8%)
+        border-radius: 1rem
+        box-shadow: 4px 4px 8px rgba(0, 0, 0, .7)
+        p
+            margin: 0
 
 footer
     position: relative

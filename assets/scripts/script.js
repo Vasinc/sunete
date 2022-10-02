@@ -105,7 +105,6 @@ storyBook.addEventListener('click', event => {
 })
 
 definitions.forEach(definition => {
-    console.log(definition);
     observerY.observe(definition);
 })
 

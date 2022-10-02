@@ -65,7 +65,6 @@ button.addEventListener('click', () => {
         generateNewTitle();
     }
     if(button.textContent.toLowerCase() == 'check') {
-        console.log()
         for (let i = 0; i < options.length; i++) {
             const element = options[i];
             if (element === selectedOption) {
